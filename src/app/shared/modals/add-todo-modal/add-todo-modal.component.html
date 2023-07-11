@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Add book</h2>
+<mat-dialog-content>
+  <form [formGroup]="form" class="form">
+    <mat-form-field class="form-field">
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput>
+    </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Author</mat-label>
+        <input formControlName="author" matInput>
+      </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Year</mat-label>
+          <input formControlName="year" matInput>
+        </mat-form-field>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [disabled]="form.invalid" [mat-dialog-close]="onAdd()" cdkFocusInitial>Add</button>
+</mat-dialog-actions>
